@@ -1,11 +1,24 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
+// import HelloWord from "../components/HelloWorld.vue";
+import AllImages from "../components/AllImages.vue";
+import BrandingGoal from "../components/BrandingGoal.vue";
 
 const routes = [
   {
     path: "/",
     name: "Home",
     component: Home,
+    children: [
+      {
+        path: "/",
+        component: AllImages,
+      },
+      {
+        path: "/branding-goal",
+        component: BrandingGoal,
+      },
+    ],
   },
   {
     path: "/about",
